@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends 'base.html' %} 
+{% block page_title %} {{ post.title }} {% endblock %} 
+{% block content %} 
+
+  <div class="post">
+    <h2>{{ post.title }}</h2>
+    <p class="meta author-publish">By {{ post.author }} on {{ post.publish }}</p>
+    <p>{{ post.body }}</p>
+  </div>
+
+{% endblock %} 
+
+{% block sidebar %}
+  <p>
+    This is a sidebar where you can put additional information about yourself or
+    your blog.
+  </p>
+  <h2>Categories</h2>
+  <ul>
+    <li>Category 1</li>
+    <li>Category 2</li>
+    <li>Category 3</li>
+  </ul>
+{% endblock %}
+

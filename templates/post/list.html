@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+{% block page_title %} Blog Posts {% endblock %} 
+{% block content %} 
+  {% for post in posts %}
+    <div class="post">
+      <h2>{{ post.title }}</h2>
+      <p class="meta">By {{ post.author }} on {{ post.publish }}</p>
+      <p>{{ post.body }}</p>
+    </div>
+  {% endfor %} 
+{% endblock %} 
+
+{% block sidebar %}
+  <p>
+    This is a sidebar where you can put additional information about yourself or
+    your blog.
+  </p>
+  <h2>Categories</h2>
+  <ul>
+    <li>Category 1</li>
+    <li>Category 2</li>
+    <li>Category 3</li>
+  </ul>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Posts</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      h1 {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+      }
+      .container {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+      }
+      .main-content {
+        flex: 3;
+        margin-right: 20px;
+      }
+      .sidebar {
+        flex: 1;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
+      .post {
+        background: white;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .post h2 {
+        margin-top: 0;
+      }
+      .post p {
+        line-height: 1.6;
+      }
+      .post .meta {
+        color: #777;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{% block page_title %} {% endblock %}</h1>
+    <div class="container">
+      <div class="main-content">{% block content %} {% endblock %}</div>
+      <div class="sidebar">
+        <h2>About Me</h2>
+        {% block sidebar %} {% endblock %}
+      </div>
+    </div>
+  </body>
+</html>
